@@ -1,8 +1,10 @@
+package atividade2;
+
 public class Complexo {
     double real;
     double imaginario;
 
-    public Complexo (double r, double i) {
+    Complexo (double r, double i) {
         this.real = r;
         this.imaginario = i;
     }
@@ -10,25 +12,25 @@ public class Complexo {
     // imaginario = b
     // c.real = c
     // c.imaginario = d
-    public Complexo adiciona(Complexo n) {
+    Complexo adiciona(Complexo n) {
         Complexo soma = new Complexo(0,0);
         soma.real = real + n.real;
         soma.imaginario = imaginario + n.imaginario;
         return soma;
     }
-    public Complexo subtrai(Complexo n) {
+    Complexo subtrai(Complexo n) {
         Complexo diferenca = new Complexo(0, 0);
         diferenca.real = real - n.real;
         diferenca.imaginario = imaginario - n.imaginario;
         return diferenca; 
     }
-    public Complexo multiplica(Complexo n) {
+    Complexo multiplica(Complexo n) {
         Complexo produto = new Complexo(0, 0);
         produto.real = real*n.real - imaginario*n.imaginario;
         produto.imaginario = real*n.imaginario + imaginario*n.real;
         return produto;
     }
-    public Complexo divide(Complexo n) {
+    Complexo divide(Complexo n) {
         Complexo quociente = new Complexo(0, 0);
         double a = real;
         double b = imaginario;
@@ -38,7 +40,7 @@ public class Complexo {
         quociente.imaginario = (b*c - a*d) / (c*c + d*d);
         return quociente;
     }
-    public String converteParaString() {
+    String converteParaString() {
         String string = String.format("%.2f + %.2fi", real, imaginario);
         return string;
     }
